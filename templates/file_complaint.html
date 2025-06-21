@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>File a Complaint</h2>
+<form method="POST">
+    <label for="category">Category:</label>
+    <select name="category" required>
+        {% for cat in categories %}
+        <option value="{{ cat.id }}">{{ cat.name }}</option>
+        {% endfor %}
+    </select>
+
+    <label for="description">Description:</label>
+    <textarea name="description" required></textarea>
+
+    <button type="submit">Submit Complaint</button>
+</form>
+<a href="/student/dashboard">Back to Dashboard</a>
+{% endblock %}

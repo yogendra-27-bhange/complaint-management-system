@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Welcome, Student</h2>
+<a href="/file-complaint">File New Complaint</a>
+<a class="logout" href="/logout">Logout</a>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Category ID</th>
+        <th>Description</th>
+        <th>Status</th>
+        <th>Created At</th>
+    </tr>
+    {% for complaint in complaints %}
+    <tr>
+        <td>{{ complaint.id }}</td>
+        <td>{{ complaint.category_id }}</td>
+        <td>{{ complaint.description }}</td>
+        <td>{{ complaint.status }}</td>
+        <td>{{ complaint.created_at }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
